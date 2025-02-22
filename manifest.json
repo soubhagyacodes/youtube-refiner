@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Youtube ",
+    "version": "1.0",
+    "description": "Displays a list of video titles from the current YouTube page",
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": ["https://www.youtube.com/*"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
